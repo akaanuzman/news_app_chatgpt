@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../../generation/index.dart';
 import 'app_text_theme.dart';
 

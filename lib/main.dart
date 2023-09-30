@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:news_app_chatgpt/products/initialize/app_initialize.dart';
+import 'products/initialize/app_initialize.dart';
 
 import 'products/constants/app_constants.dart';
 import 'products/utilities/routes/app_router.dart';

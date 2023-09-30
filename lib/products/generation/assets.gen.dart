@@ -35,6 +35,19 @@ class $AssetsFontsGen {
   List<String> get values => [inter, nantes, sFPro];
 }
 
+class $AssetsIconsGen {
+  const $AssetsIconsGen();
+
+  /// File path: assets/icons/ic_apple.svg
+  String get icApple => 'assets/icons/ic_apple.svg';
+
+  /// File path: assets/icons/ic_google.svg
+  String get icGoogle => 'assets/icons/ic_google.svg';
+
+  /// List of all assets
+  List<String> get values => [icApple, icGoogle];
+}
+
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
@@ -55,6 +68,7 @@ class Assets {
 
   static const $AssetsColorGen color = $AssetsColorGen();
   static const $AssetsFontsGen fonts = $AssetsFontsGen();
+  static const $AssetsIconsGen icons = $AssetsIconsGen();
   static const $AssetsImagesGen images = $AssetsImagesGen();
 }
 
