@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:news_app_chatgpt/products/initialize/app_initialize.dart';
 
 import 'products/constants/app_constants.dart';
 import 'products/utilities/routes/app_router.dart';
 import 'products/utilities/theme/app_theme.dart';
 
-void main() => runApp(const MyApp());
+void main() async {
+  await AppInitialize.initializeApp();
+  runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

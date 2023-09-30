@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "572056529252",
+    "project_id": "news-app-chatgpt",
+    "storage_bucket": "news-app-chatgpt.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:572056529252:android:e6eb28f1be2b1c7bef3271",
+        "android_client_info": {
+          "package_name": "com.example.news_app_chatgpt"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUfcny-N_TJ6P6EclPi2uesNQYbJ7Td6E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
