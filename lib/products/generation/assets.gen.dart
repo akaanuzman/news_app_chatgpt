@@ -42,11 +42,12 @@ class $AssetsImagesGen {
   AssetGenImage get imgHomeTopBar =>
       const AssetGenImage('assets/images/img_home_top_bar.png');
 
-  /// File path: assets/images/img_onboard.svg
-  String get imgOnboard => 'assets/images/img_onboard.svg';
+  /// File path: assets/images/img_onboard.png
+  AssetGenImage get imgOnboard =>
+      const AssetGenImage('assets/images/img_onboard.png');
 
   /// List of all assets
-  List<dynamic> get values => [imgHomeTopBar, imgOnboard];
+  List<AssetGenImage> get values => [imgHomeTopBar, imgOnboard];
 }
 
 class Assets {

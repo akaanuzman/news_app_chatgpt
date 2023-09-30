@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'features/views/auth/on_board_view.dart';
+
 import 'products/constants/app_constants.dart';
+import 'products/utilities/routes/app_router.dart';
 import 'products/utilities/theme/app_theme.dart';
 
 void main() => runApp(const MyApp());
@@ -10,11 +11,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
+      routerConfig: AppRouter.routes,
       debugShowCheckedModeBanner: AppConstants.isShowDebugBanner,
       title: AppConstants.appName,
       theme: AppTheme().currentTheme,
-      home: const OnBoardView(),
     );
   }
 }
