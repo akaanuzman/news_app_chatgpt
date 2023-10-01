@@ -1,11 +1,14 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:kartal/kartal.dart';
-import 'package:news_app_chatgpt/features/view_models/auth_view_model.dart';
 import 'package:provider/provider.dart';
+
 import '../../../products/constants/string_constants.dart';
 import '../../../products/generation/index.dart';
 import '../../../products/utilities/extensions/image_extensions.dart';
 import '../../../products/widgets/buttons/sign_in_button.dart';
+import '../../view_models/auth_view_model.dart';
 
 class OnBoardView extends StatelessWidget {
   const OnBoardView({super.key});
@@ -62,31 +65,44 @@ class _TitleSubtitleAndSignInButtons extends StatelessWidget {
           StringConstants.onboardTitle,
           style: context.general.textTheme.headlineLarge,
         ),
+
         context.sized.emptySizedHeightBoxLow,
+
         // Subtitle: Get the latest and updates....
         Text(
           StringConstants.onboardSubtitle,
           style: context.general.textTheme.bodyLarge,
         ),
+
         context.sized.emptySizedHeightBoxLow3x,
+
         // Google Button
         ChangeNotifierProvider<AuthViewModel>(
           create: (_) => AuthViewModel(),
           child: Consumer<AuthViewModel>(
-            builder: (context, viewModel, child) => SingInButton(
+            builder: (context, viewModel, child) => SignInButton(
               onPressed: () => viewModel.signInWithGoogle(context),
-              buttonType: ButtonType.google,
               isLoading: viewModel.isGoogleLoading,
             ),
           ),
         ),
+
         context.sized.emptySizedHeightBoxLow3x,
-        // Apple Button
-        SingInButton(
-          onPressed: () {},
-          buttonType: ButtonType.apple,
-          isLoading: false,
-        ),
+
+        // Apple Button only show on iOS or MacOS
+        Visibility(
+          visible: Platform.isIOS || Platform.isMacOS,
+          child: ChangeNotifierProvider<AuthViewModel>(
+            create: (_) => AuthViewModel(),
+            child: Consumer<AuthViewModel>(
+              builder: (context, viewModel, child) => SignInButton(
+                onPressed: () => viewModel.signInWithApple(context),
+                isLoading: viewModel.isAppleLoading,
+                buttonType: ButtonType.apple,
+              ),
+            ),
+          ),
+        )
       ],
     );
   }

@@ -26,11 +26,30 @@ class AuthViewModel with ChangeNotifier {
     notifyListeners();
   }
 
+  /// Allows the user to sign in to the app with their google account
   Future<void> signInWithGoogle(BuildContext context) async {
     isGoogleLoading = true;
     final UserCredential? userCredential = await AuthService.signInWithGoogle();
     isGoogleLoading = false;
 
+    validationForSignInMethods(userCredential, context);
+  }
+
+  /// Allows the user to sign in to the app with their apple account
+  Future<void> signInWithApple(BuildContext context) async {
+    isAppleLoading = true;
+    final UserCredential? userCredential = await AuthService.signInWithApple();
+    isAppleLoading = false;
+
+    validationForSignInMethods(userCredential, context);
+  }
+
+  /// This method checks if the returned objects are null and if the user is logged in for the first time.
+  /// If the user is logged in for the first time, firestore adds a new document to the User collection in the database
+  Future<void> validationForSignInMethods(
+    UserCredential? userCredential,
+    BuildContext context,
+  ) async {
     if (userCredential == null) return;
     final User? signInUser = userCredential.user;
     if (signInUser == null) return;
@@ -41,6 +60,7 @@ class AuthViewModel with ChangeNotifier {
     await createUser(signInUser, context);
   }
 
+  /// If the user is logged in for the first time, firestore adds a new document to the User collection in the database
   Future<void> createUser(User user, BuildContext context) async {
     UserModel userModel = UserModel(
       id: user.uid,
@@ -63,10 +83,4 @@ class AuthViewModel with ChangeNotifier {
       );
     }
   }
-
-  // Future<void> signInWithApple() async {
-  //   isAppleLoading = true;
-  //   await AuthService.signInWithApple();
-  //   isAppleLoading = false;
-  // }
 }

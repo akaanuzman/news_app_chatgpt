@@ -1,8 +1,7 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:json_annotation/json_annotation.dart';
-import 'package:news_app_chatgpt/products/base/base_firebase_model.dart';
+import '../../products/base/base_firebase_model.dart';
 
 part 'user_model.g.dart';
 
@@ -29,12 +28,6 @@ final class UserModel extends Equatable
 
   @override
   Map<String, dynamic> toJson() => _$UserModelToJson(this);
-
-  @override
-  UserModel? fromFirebase(DocumentSnapshot<Map<String, dynamic>> snapshot) {
-    // TODO: implement fromFirebase
-    return null;
-  }
 
   @override
   List<Object?> get props => [

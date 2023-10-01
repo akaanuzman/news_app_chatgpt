@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:kartal/kartal.dart';
-import 'package:news_app_chatgpt/products/constants/string_constants.dart';
+
+import '../../constants/string_constants.dart';
 import '../../generation/index.dart';
 import '../../utilities/extensions/image_extensions.dart';
 
 /// Is the enum type from which the type of button is selected.
 enum ButtonType { google, apple }
 
-class SingInButton extends StatelessWidget {
+class SignInButton extends StatelessWidget {
   final ButtonType buttonType;
   final void Function()? onPressed;
   final bool isLoading;
@@ -16,7 +17,7 @@ class SingInButton extends StatelessWidget {
   ///
   /// It is the [ButtonType] enum type where the button type is selected. example: google,apple,facebook,github etc.
   /// Default value is [ButtonType.google] for [buttonType] paramater.
-  const SingInButton({
+  const SignInButton({
     super.key,
     this.buttonType = ButtonType.google,
     this.onPressed,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kartal/kartal.dart';
-import 'package:news_app_chatgpt/products/generation/index.dart';
+
+import '../../generation/index.dart';
 
 @immutable
 final class SnackBars {
