@@ -1,33 +1,31 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:kartal/kartal.dart';
+import '../../view_models/splash_view_model.dart';
+import 'package:provider/provider.dart';
 import '../../../products/constants/app_constants.dart';
 import '../../../products/generation/index.dart';
-import '../../../products/utilities/routes/app_routes.dart';
 
 class SplashView extends StatelessWidget {
   const SplashView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    final splashViewModel = Provider.of<SplashViewModel>(context);
+
+    return Scaffold(
       body: FutureBuilder(
-        future: Future.delayed(
-          const Duration(seconds: 2),
-          () => context.go(AppRoutes.onBoard.path)
-        ),
-        builder: (BuildContext context, AsyncSnapshot<Object?> snapshot) {
-          return const Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                _AppNewspaperIcon(),
-                _AppNameTitle(),
-              ],
-            ),
-          );
-        }
-      ),
+          future: splashViewModel.routingDecision(context),
+          builder: (BuildContext context, AsyncSnapshot<Object?> snapshot) {
+            return const Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  _AppNewspaperIcon(),
+                  _AppNameTitle(),
+                ],
+              ),
+            );
+          }),
     );
   }
 }

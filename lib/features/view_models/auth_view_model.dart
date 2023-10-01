@@ -2,9 +2,11 @@
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:news_app_chatgpt/features/models/user_model.dart';
 import 'package:news_app_chatgpt/products/constants/string_constants.dart';
 import 'package:news_app_chatgpt/products/enums/Collections.dart';
+import 'package:news_app_chatgpt/products/utilities/routes/app_routes.dart';
 
 import '../../products/services/index.dart';
 import '../../products/widgets/snack_bars/snack_bars.dart';
@@ -55,9 +57,13 @@ class AuthViewModel with ChangeNotifier {
     if (signInUser == null) return;
 
     if (userCredential.additionalUserInfo == null) return;
-    if (!userCredential.additionalUserInfo!.isNewUser) return;
+    if (!userCredential.additionalUserInfo!.isNewUser) {
+      await writeUserToLocalStorage(signInUser,context);
+      return;
+    }
 
     await createUser(signInUser, context);
+    await writeUserToLocalStorage(signInUser,context);
   }
 
   /// If the user is logged in for the first time, firestore adds a new document to the User collection in the database
@@ -82,5 +88,16 @@ class AuthViewModel with ChangeNotifier {
         text: StringConstants.somethingWentWrong,
       );
     }
+  }
+
+  /// Writes the user id to local storage
+  Future<void> writeUserToLocalStorage(User user,BuildContext context) async {
+    // If the user is logged in for the first time, the user id is saved to the device's local storage.
+    await LocaleStorageService().write(
+      key: LocaleStorageKeys.userId.name,
+      value: user.uid,
+    );
+    context.pushReplacement("${AppRoutes.login.path}${AppRoutes.navBar.path}");
+
   }
 }

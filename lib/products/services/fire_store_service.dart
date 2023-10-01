@@ -1,9 +1,12 @@
 import 'dart:developer';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+
 import '../base/base_firebase_model.dart';
 import '../enums/Collections.dart';
 
+/// `FireStoreService` class
+/// This class is written to manage the methods to be done in the firestore database.
 final class FireStoreService {
   FireStoreService._();
 
@@ -44,13 +47,19 @@ final class FireStoreService {
     required String docId,
   }) async {
     try {
+      // The [collectionReference] variable is used to get the reference of the collection.
       final CollectionReference<Map<String, dynamic>> collectionReference =
           collection.reference;
+
+      // The [documentSnapshot] variable is used to get the data from the database.
       final DocumentSnapshot<Map<String, dynamic>> documentSnapshot =
           await collectionReference.doc(docId).get();
+
+      // The [data] variable is used to get the data from the [documentSnapshot] variable.
       final Map<String, dynamic>? data = documentSnapshot.data();
 
       if (data == null) return null;
+
       model = model.fromJson(data);
       return model;
     } on FirebaseException catch (e) {

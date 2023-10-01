@@ -10,8 +10,8 @@ import '../../../products/utilities/extensions/image_extensions.dart';
 import '../../../products/widgets/buttons/sign_in_button.dart';
 import '../../view_models/auth_view_model.dart';
 
-class OnBoardView extends StatelessWidget {
-  const OnBoardView({super.key});
+class LoginView extends StatelessWidget {
+  const LoginView({super.key});
 
   @override
   Widget build(BuildContext context) {
