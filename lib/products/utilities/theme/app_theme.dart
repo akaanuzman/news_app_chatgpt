@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:news_app_chatgpt/products/generation/index.dart';
-import 'package:news_app_chatgpt/products/utilities/theme/app_text_theme.dart';
+
+import '../../generation/index.dart';
+import 'app_text_theme.dart';
 
 @immutable
 final class AppTheme {

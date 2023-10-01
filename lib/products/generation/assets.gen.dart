@@ -35,6 +35,19 @@ class $AssetsFontsGen {
   List<String> get values => [inter, nantes, sFPro];
 }
 
+class $AssetsIconsGen {
+  const $AssetsIconsGen();
+
+  /// File path: assets/icons/ic_apple.svg
+  String get icApple => 'assets/icons/ic_apple.svg';
+
+  /// File path: assets/icons/ic_google.svg
+  String get icGoogle => 'assets/icons/ic_google.svg';
+
+  /// List of all assets
+  List<String> get values => [icApple, icGoogle];
+}
+
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
@@ -42,11 +55,12 @@ class $AssetsImagesGen {
   AssetGenImage get imgHomeTopBar =>
       const AssetGenImage('assets/images/img_home_top_bar.png');
 
-  /// File path: assets/images/img_onboard.svg
-  String get imgOnboard => 'assets/images/img_onboard.svg';
+  /// File path: assets/images/img_onboard.png
+  AssetGenImage get imgOnboard =>
+      const AssetGenImage('assets/images/img_onboard.png');
 
   /// List of all assets
-  List<dynamic> get values => [imgHomeTopBar, imgOnboard];
+  List<AssetGenImage> get values => [imgHomeTopBar, imgOnboard];
 }
 
 class Assets {
@@ -54,6 +68,7 @@ class Assets {
 
   static const $AssetsColorGen color = $AssetsColorGen();
   static const $AssetsFontsGen fonts = $AssetsFontsGen();
+  static const $AssetsIconsGen icons = $AssetsIconsGen();
   static const $AssetsImagesGen images = $AssetsImagesGen();
 }
 

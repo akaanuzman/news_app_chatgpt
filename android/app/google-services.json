@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "572056529252",
+    "project_id": "news-app-chatgpt",
+    "storage_bucket": "news-app-chatgpt.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:572056529252:android:e6eb28f1be2b1c7bef3271",
+        "android_client_info": {
+          "package_name": "com.example.news_app_chatgpt"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "572056529252-g1bqd4bbs2i1vfvisl5l93g8dlrqcqe7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.news_app_chatgpt",
+            "certificate_hash": "5fc29ddd1ca88fc47ee4fea3b762ac568d8ec2dd"
+          }
+        },
+        {
+          "client_id": "572056529252-nraj5d2flfhqvtbr4ms91oul90lhtgna.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUfcny-N_TJ6P6EclPi2uesNQYbJ7Td6E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "572056529252-nraj5d2flfhqvtbr4ms91oul90lhtgna.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "572056529252-ncgbrc39g154ea3q1aqga5h9osdr2lkn.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.newsAppChatgpt"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

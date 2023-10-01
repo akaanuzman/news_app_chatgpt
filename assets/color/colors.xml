@@ -7,5 +7,7 @@
     <color name="kettleman">#606060</color>
     <color name="white">#FFFFFF</color>
     <color name="mithril">#878787</color>
+    <color name="shade">#D6D6D6</color>
+    <color name="chaosBlack">#101010</color>
 </resources>
 
