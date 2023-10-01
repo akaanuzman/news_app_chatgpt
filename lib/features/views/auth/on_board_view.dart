@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kartal/kartal.dart';
+import 'package:news_app_chatgpt/features/view_models/auth_view_model.dart';
+import 'package:provider/provider.dart';
 import '../../../products/constants/string_constants.dart';
 import '../../../products/generation/index.dart';
 import '../../../products/utilities/extensions/image_extensions.dart';
@@ -68,14 +70,22 @@ class _TitleSubtitleAndSignInButtons extends StatelessWidget {
         ),
         context.sized.emptySizedHeightBoxLow3x,
         // Google Button
-        SingInButton(
-          onPressed: () {},
+        ChangeNotifierProvider<AuthViewModel>(
+          create: (_) => AuthViewModel(),
+          child: Consumer<AuthViewModel>(
+            builder: (context, viewModel, child) => SingInButton(
+              onPressed: () => viewModel.signInWithGoogle(context),
+              buttonType: ButtonType.google,
+              isLoading: viewModel.isGoogleLoading,
+            ),
+          ),
         ),
         context.sized.emptySizedHeightBoxLow3x,
         // Apple Button
         SingInButton(
           onPressed: () {},
           buttonType: ButtonType.apple,
+          isLoading: false,
         ),
       ],
     );

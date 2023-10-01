@@ -1,11 +1,15 @@
-import 'package:flutter/foundation.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
-@immutable
-base class BaseFirebaseModel<T> {
-  const BaseFirebaseModel({
-    required this.id,
-    required this.data,
-  });
-  final String id;
-  final T data;
+abstract class BaseFirebaseModel<T> {
+  T fromJson(Map<String, dynamic> json);
+
+  T? fromFirebase(DocumentSnapshot<Map<String, dynamic>> snapshot) {
+    final Map<String, dynamic>? response = snapshot.data();
+    if (response != null) {
+      return fromJson(response);
+    }
+    return null;
+  }
+
+  Map<String, dynamic> toJson();
 }

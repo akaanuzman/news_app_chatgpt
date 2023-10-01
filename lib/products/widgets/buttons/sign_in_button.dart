@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kartal/kartal.dart';
+import 'package:news_app_chatgpt/products/constants/string_constants.dart';
 import '../../generation/index.dart';
 import '../../utilities/extensions/image_extensions.dart';
 
@@ -9,6 +10,7 @@ enum ButtonType { google, apple }
 class SingInButton extends StatelessWidget {
   final ButtonType buttonType;
   final void Function()? onPressed;
+  final bool isLoading;
 
   /// Sets the button display according to the buttontype enum.
   ///
@@ -18,6 +20,7 @@ class SingInButton extends StatelessWidget {
     super.key,
     this.buttonType = ButtonType.google,
     this.onPressed,
+    required this.isLoading,
   });
 
   @override
@@ -25,9 +28,9 @@ class SingInButton extends StatelessWidget {
     return SizedBox(
       width: double.maxFinite,
       child: ElevatedButton.icon(
-        onPressed: onPressed,
-        icon: isGoogle ? Assets.icons.icGoogle.svg : Assets.icons.icApple.svg,
-        label: Text(isGoogle ? "Continue with Google" : "Continue with Apple"),
+        onPressed: isLoading ? () {} : onPressed,
+        icon: icon,
+        label: label,
         style: ElevatedButton.styleFrom(
           backgroundColor: isGoogle ? ColorName.white : ColorName.chaosBlack,
           foregroundColor: isGoogle ? ColorName.label : ColorName.white,
@@ -45,4 +48,14 @@ class SingInButton extends StatelessWidget {
   }
 
   bool get isGoogle => buttonType == ButtonType.google;
+  Widget get icon => isLoading
+      ? Container()
+      : isGoogle
+          ? Assets.icons.icGoogle.svg
+          : Assets.icons.icApple.svg;
+  Widget get label => isLoading
+      ? const CircularProgressIndicator.adaptive()
+      : Text(isGoogle
+          ? StringConstants.googleSignIn
+          : StringConstants.appleSignIn);
 }
