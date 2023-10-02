@@ -13,6 +13,8 @@ final class StringConstants {
   static const String goodMoring = "Good Morning!";
   static const String updateNews = "Update News Today";
   static const String ok = "Ok";
+  static const String cancel = "Cancel";
   static const String haveNoNews = "No news was found at the moment, please try again later.";
   static const String newsDetail = "News Detail";
+  static const String summurizeTheNews = "Summarise the news";
 }
