@@ -1,14 +1,10 @@
 // ignore_for_file: body_might_complete_normally_catch_error
 
 import 'dart:developer';
-import 'dart:io';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:news_app_chatgpt/features/models/security_keys_model.dart';
-import 'package:news_app_chatgpt/features/view_models/splash_view_model.dart';
-import 'package:provider/provider.dart';
 
 @immutable
 final class AuthService {

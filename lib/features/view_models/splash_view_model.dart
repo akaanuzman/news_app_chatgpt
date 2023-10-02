@@ -1,7 +1,5 @@
 // ignore_for_file: use_build_context_synchronously
 
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:news_app_chatgpt/features/models/security_keys_model.dart';
@@ -56,7 +54,7 @@ class SplashViewModel with ChangeNotifier {
   Future<void> _routingDecision(BuildContext context) async {
     if (_isRedirectHome) {
       context
-          .pushReplacement("${AppRoutes.login.path}${AppRoutes.navBar.path}");
+          .pushReplacement("${AppRoutes.login.path}${AppRoutes.home.path}");
     } else {
       context.pushReplacement(AppRoutes.login.path);
     }

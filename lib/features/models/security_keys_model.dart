@@ -2,14 +2,14 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-import '../../products/base/base_firebase_model.dart';
+import '../../products/base/base_model.dart';
 
 part 'security_keys_model.g.dart';
 
 @JsonSerializable()
 @immutable
 final class SecurityKeysModel extends Equatable
-    implements BaseFirebaseModel<SecurityKeysModel> {
+    implements BaseModel<SecurityKeysModel> {
   final String? clientId;
   final String? newsApiKey;
 

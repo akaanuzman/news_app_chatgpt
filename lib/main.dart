@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'features/view_models/splash_view_model.dart';
 import 'package:provider/provider.dart';
 
+import 'features/view_models/news_view_model.dart';
+import 'features/view_models/splash_view_model.dart';
+import 'features/view_models/user_view_model.dart';
 import 'products/constants/app_constants.dart';
 import 'products/initialize/app_initialize.dart';
 import 'products/utilities/routes/app_router.dart';
@@ -13,6 +15,8 @@ void main() async {
     MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context) => SplashViewModel()),
+        ChangeNotifierProvider(create: (context) => UserViewModel()),
+        ChangeNotifierProvider(create: (context) => NewsViewModel()),
       ],
       child: const MyApp(),
     ),

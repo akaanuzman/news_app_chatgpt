@@ -6,4 +6,5 @@ final class AppConstants {
 
   static const String appName = 'News App';
   static const bool isShowDebugBanner = false;
+  static const String newsBaseUrl = 'https://gnews.io/api/v4/';
 }

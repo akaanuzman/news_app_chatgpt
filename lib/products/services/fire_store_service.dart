@@ -2,7 +2,7 @@ import 'dart:developer';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-import '../base/base_firebase_model.dart';
+import '../base/base_model.dart';
 import '../enums/Collections.dart';
 
 /// `FireStoreService` class
@@ -19,7 +19,7 @@ final class FireStoreService {
   ///
   /// Returns:
   /// Returns [true] if the insertion was successful and error-free, [false] if there was an error
-  static Future<bool> createDocument<T extends BaseFirebaseModel>({
+  static Future<bool> createDocument<T extends BaseModel>({
     required T model,
     required Collections collection,
     required String docId,
@@ -41,7 +41,7 @@ final class FireStoreService {
   /// [model] -> The model you created for the related collection
   /// [collections] -> Enum type returning a reference to the corresponding collection
   /// [docId] -> The documentId needed to find the related document in the collection
-  static Future<T?> readDocument<T extends BaseFirebaseModel>({
+  static Future<T?> readDocument<T extends BaseModel>({
     required T model,
     required Collections collection,
     required String docId,

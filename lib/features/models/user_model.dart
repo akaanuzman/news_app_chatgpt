@@ -2,14 +2,14 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-import '../../products/base/base_firebase_model.dart';
+import '../../products/base/base_model.dart';
 
 part 'user_model.g.dart';
 
 @JsonSerializable()
 @immutable
 final class UserModel extends Equatable
-    implements BaseFirebaseModel<UserModel> {
+    implements BaseModel<UserModel> {
   final String? id;
   final String? name;
   final String? email;

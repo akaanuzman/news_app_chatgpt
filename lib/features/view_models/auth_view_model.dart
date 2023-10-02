@@ -140,6 +140,6 @@ class AuthViewModel with ChangeNotifier {
       key: LocaleStorageKeys.userId.name,
       value: user.uid,
     );
-    context.pushReplacement("${AppRoutes.login.path}${AppRoutes.navBar.path}");
+    context.pushReplacement("${AppRoutes.login.path}${AppRoutes.home.path}");
   }
 }

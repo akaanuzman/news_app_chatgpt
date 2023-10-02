@@ -1,7 +1,6 @@
 enum AppRoutes {
   splash('/'),
   login('login'),
-  navBar('navBar'),
   home('home'),
   ;
 
