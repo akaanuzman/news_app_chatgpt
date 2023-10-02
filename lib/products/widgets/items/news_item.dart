@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:kartal/kartal.dart';
+import 'package:news_app_chatgpt/products/utilities/routes/app_routes.dart';
 
 import '../../../features/models/news_model.dart';
 import '../../generation/index.dart';
@@ -15,45 +17,47 @@ class NewsItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: context.padding.low,
-      child: Row(
-        children: [
-          RoundedRectangleNetworkImage(imageUrl: news.image ?? ""),
-          context.sized.emptySizedWidthBoxLow3x,
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
+    return InkWell(
+      onTap: () => context.push(AppRoutes.newsDetail.value,extra: news),
+      child: Padding(
+        padding: context.padding.low,
+        child: Row(
+          children: [
+            RoundedRectangleNetworkImage(imageUrl: news.image ?? ""),
+            context.sized.emptySizedWidthBoxLow3x,
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  // News title
+                  Text(
+                    news.title ?? "",
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: context.general.textTheme.titleLarge,
+                  ),
+                  context.sized.emptySizedHeightBoxLow,
 
-                // News title
-                Text(
-                  news.title ?? "",
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                  style: context.general.textTheme.titleLarge,
-                ),
-                context.sized.emptySizedHeightBoxLow,
+                  // News description
+                  Text(
+                    news.description ?? "",
+                    style: context.general.textTheme.headlineMedium
+                        ?.copyWith(color: ColorName.label),
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                  context.sized.emptySizedHeightBoxLow,
 
-                // News description
-                Text(
-                  news.description ?? "",
-                  style: context.general.textTheme.headlineMedium
-                      ?.copyWith(color: ColorName.label),
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                ),
-                context.sized.emptySizedHeightBoxLow,
-
-                // Time ago text 2min ago....
-                Text(
-                  news.publishedAt?.toDate.timeAgo ?? "",
-                  style: context.general.textTheme.bodySmall,
-                )
-              ],
-            ),
-          )
-        ],
+                  // Time ago text 2min ago....
+                  Text(
+                    news.publishedAt?.toDate.timeAgo ?? "",
+                    style: context.general.textTheme.bodySmall,
+                  )
+                ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

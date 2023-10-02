@@ -16,12 +16,14 @@ class RoundedRectangleNetworkImage extends StatelessWidget {
   final NetworkImageSizeConstants imageSize;
   final IconSizeConstants iconSize;
   final ContainerSizeConstants containerSize;
+  final BorderRadiusGeometry? borderRadius;
   const RoundedRectangleNetworkImage({
     super.key,
     required this.imageUrl,
     this.imageSize = NetworkImageSizeConstants.small,
     this.iconSize = IconSizeConstants.small,
     this.containerSize = ContainerSizeConstants.medium,
+    this.borderRadius,
   });
 
   @override
@@ -32,7 +34,7 @@ class RoundedRectangleNetworkImage extends StatelessWidget {
         width: context.sized.dynamicHeight(containerSize.value),
         height: context.sized.dynamicHeight(containerSize.value),
         decoration: BoxDecoration(
-          borderRadius: context.border.lowBorderRadius,
+          borderRadius: borderRadius ?? context.border.lowBorderRadius,
           image: DecorationImage(
             image: imageProvider,
             fit: BoxFit.cover,

@@ -14,4 +14,5 @@ final class StringConstants {
   static const String updateNews = "Update News Today";
   static const String ok = "Ok";
   static const String haveNoNews = "No news was found at the moment, please try again later.";
+  static const String newsDetail = "News Detail";
 }
