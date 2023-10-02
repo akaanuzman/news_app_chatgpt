@@ -1,8 +1,8 @@
 enum AppRoutes {
   splash('/'),
   login('login'),
-  navBar('navBar'),
   home('home'),
+  newsDetail('/news-detail')
   ;
 
   const AppRoutes(this.value);

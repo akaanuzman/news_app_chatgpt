@@ -1,7 +1,6 @@
 // ignore_for_file: body_might_complete_normally_catch_error
 
 import 'dart:developer';
-import 'dart:io';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -13,16 +12,12 @@ final class AuthService {
 
   /// `signInWithGoogle` method
   /// Allows login with Google account and returns UserCredential? object.
-  static Future<UserCredential?> signInWithGoogle() async {
-    // TODO: FIX LATER
-    const String clientId =
-        '572056529252-ncgbrc39g154ea3q1aqga5h9osdr2lkn.apps.googleusercontent.com';
+  static Future<UserCredential?> signInWithGoogle(String? clientId) async {
 
     try {
       // Trigger the authentication flow
       final GoogleSignInAccount? googleUser =
-          await GoogleSignIn(clientId: Platform.isAndroid ? null : clientId)
-              .signIn();
+          await GoogleSignIn(clientId: clientId).signIn();
 
       if (googleUser == null) return null;
 

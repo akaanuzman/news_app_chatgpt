@@ -15,7 +15,7 @@ final class AppTextTheme {
     headlineMedium: TextStyle(
       fontSize: 18.0,
       fontWeight: FontWeight.w400,
-      color: ColorName.label,
+      color: ColorName.white,
       fontFamily: FontFamily.nantes,
     ),
 
@@ -40,8 +40,8 @@ final class AppTextTheme {
       color: ColorName.kettleman,
       fontFamily: FontFamily.inter,
     ),
-    headlineSmall: TextStyle(
-      fontSize: 10.0,
+    titleLarge: TextStyle(
+      fontSize: 20.0,
       fontWeight: FontWeight.w400,
       color: ColorName.artfulRed,
       fontFamily: FontFamily.inter,

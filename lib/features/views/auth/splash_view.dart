@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:kartal/kartal.dart';
-import '../../view_models/splash_view_model.dart';
 import 'package:provider/provider.dart';
+
 import '../../../products/constants/app_constants.dart';
 import '../../../products/generation/index.dart';
+import '../../view_models/splash_view_model.dart';
 
 class SplashView extends StatelessWidget {
   const SplashView({super.key});
@@ -14,7 +15,7 @@ class SplashView extends StatelessWidget {
 
     return Scaffold(
       body: FutureBuilder(
-          future: splashViewModel.routingDecision(context),
+          future: splashViewModel.initApp(context),
           builder: (BuildContext context, AsyncSnapshot<Object?> snapshot) {
             return const Center(
               child: Column(

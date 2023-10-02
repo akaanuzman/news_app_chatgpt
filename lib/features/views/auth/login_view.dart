@@ -2,11 +2,11 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:kartal/kartal.dart';
+import 'package:news_app_chatgpt/products/utilities/extensions/index.dart';
 import 'package:provider/provider.dart';
 
 import '../../../products/constants/string_constants.dart';
 import '../../../products/generation/index.dart';
-import '../../../products/utilities/extensions/image_extensions.dart';
 import '../../../products/widgets/buttons/sign_in_button.dart';
 import '../../view_models/auth_view_model.dart';
 
