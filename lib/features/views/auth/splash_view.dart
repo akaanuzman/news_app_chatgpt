@@ -14,7 +14,7 @@ class SplashView extends StatelessWidget {
 
     return Scaffold(
       body: FutureBuilder(
-          future: splashViewModel.routingDecision(context),
+          future: splashViewModel.initApp(context),
           builder: (BuildContext context, AsyncSnapshot<Object?> snapshot) {
             return const Center(
               child: Column(

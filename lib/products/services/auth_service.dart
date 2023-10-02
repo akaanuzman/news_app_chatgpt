@@ -6,6 +6,9 @@ import 'dart:io';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:news_app_chatgpt/features/models/security_keys_model.dart';
+import 'package:news_app_chatgpt/features/view_models/splash_view_model.dart';
+import 'package:provider/provider.dart';
 
 @immutable
 final class AuthService {
@@ -13,16 +16,12 @@ final class AuthService {
 
   /// `signInWithGoogle` method
   /// Allows login with Google account and returns UserCredential? object.
-  static Future<UserCredential?> signInWithGoogle() async {
-    // TODO: FIX LATER
-    const String clientId =
-        '572056529252-ncgbrc39g154ea3q1aqga5h9osdr2lkn.apps.googleusercontent.com';
+  static Future<UserCredential?> signInWithGoogle(String? clientId) async {
 
     try {
       // Trigger the authentication flow
       final GoogleSignInAccount? googleUser =
-          await GoogleSignIn(clientId: Platform.isAndroid ? null : clientId)
-              .signIn();
+          await GoogleSignIn(clientId: clientId).signIn();
 
       if (googleUser == null) return null;
 
