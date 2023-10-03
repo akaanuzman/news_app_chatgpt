@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:kartal/kartal.dart';
-import 'package:news_app_chatgpt/products/constants/index.dart';
-import 'package:news_app_chatgpt/products/generation/colors.gen.dart';
+
+import '../../constants/index.dart';
+import '../../generation/colors.gen.dart';
 
 class GrayRoundedIconButton extends StatelessWidget {
   final IconData icon;

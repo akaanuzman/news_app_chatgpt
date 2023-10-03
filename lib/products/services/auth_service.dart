@@ -13,7 +13,6 @@ final class AuthService {
   /// `signInWithGoogle` method
   /// Allows login with Google account and returns UserCredential? object.
   static Future<UserCredential?> signInWithGoogle(String? clientId) async {
-
     try {
       // Trigger the authentication flow
       final GoogleSignInAccount? googleUser =

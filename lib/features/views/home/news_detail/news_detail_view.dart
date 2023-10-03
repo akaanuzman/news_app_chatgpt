@@ -1,15 +1,13 @@
-import 'package:adaptive_action_sheet/adaptive_action_sheet.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:kartal/kartal.dart';
-import 'package:news_app_chatgpt/features/models/news_model.dart';
-import 'package:news_app_chatgpt/products/generation/index.dart';
-import 'package:news_app_chatgpt/products/utilities/extensions/string_to_date_extensions.dart';
-import 'package:news_app_chatgpt/products/widgets/action_sheet/adaptive_action_sheet.dart';
-import 'package:news_app_chatgpt/products/widgets/icon_button/gray_rounded_icon_button.dart';
-import 'package:news_app_chatgpt/products/widgets/network_image/index.dart';
 
 import '../../../../products/constants/index.dart';
+import '../../../../products/utilities/extensions/string_to_date_extensions.dart';
+import '../../../../products/widgets/action_sheet/adaptive_action_sheet.dart';
+import '../../../../products/widgets/icon_button/gray_rounded_icon_button.dart';
+import '../../../../products/widgets/network_image/index.dart';
+import '../../../models/news_model.dart';
 
 class NewsDetailView extends StatelessWidget {
   final NewsModel news;

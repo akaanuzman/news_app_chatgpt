@@ -1,7 +1,8 @@
 import 'package:adaptive_action_sheet/adaptive_action_sheet.dart';
 import 'package:flutter/material.dart';
-import 'package:news_app_chatgpt/products/constants/index.dart';
-import 'package:news_app_chatgpt/products/generation/index.dart';
+
+import '../../constants/index.dart';
+import '../../generation/index.dart';
 
 final class AdaptiveActionSheet {
   AdaptiveActionSheet._();

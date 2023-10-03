@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:kartal/kartal.dart';
-import 'package:news_app_chatgpt/products/utilities/routes/app_routes.dart';
 
 import '../../../features/models/news_model.dart';
 import '../../generation/index.dart';
 import '../../utilities/extensions/index.dart';
+import '../../utilities/routes/app_routes.dart';
 import '../network_image/index.dart';
 
 /// [NewsItem] is a [Row] with [RoundedRectangleNetworkImage] and [Column].

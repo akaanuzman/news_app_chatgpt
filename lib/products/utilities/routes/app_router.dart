@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:news_app_chatgpt/features/models/news_model.dart';
+import '../../../features/models/news_model.dart';
 import '../../../features/views/index.dart';
 import 'app_routes.dart';
 
