@@ -23,7 +23,7 @@ git clone https://github.com/akaanuzman/news_app_chatgpt
 
 #### 🎁 [Bağımlılıklar](https://github.com/akaanuzman/news_app_chatgpt/blob/main/pubspec.yaml)
 
-#### ✅ [Test Senaryoları](https://github.com/akaanuzman/news_app_chatgpt/commit/bea9a1bd11213ac53e6b54d8c53b8342e06f43da)
+#### ✅ [Test Senaryoları](https://github.com/akaanuzman/news_app_chatgpt/pull/3)
   
 <br>
 
@@ -44,6 +44,6 @@ git clone https://github.com/akaanuzman/news_app_chatgpt
 
 #### 🎁 [Dependencies](https://github.com/akaanuzman/news_app_chatgpt/blob/main/pubspec.yaml)
 
-#### ✅ [Test Scenarios](https://github.com/akaanuzman/news_app_chatgpt/commit/bea9a1bd11213ac53e6b54d8c53b8342e06f43da)
+#### ✅ [Test Scenarios](https://github.com/akaanuzman/news_app_chatgpt/pull/3)
   
 
