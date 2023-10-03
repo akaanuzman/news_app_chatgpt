@@ -14,7 +14,11 @@ final class StringConstants {
   static const String updateNews = "Update News Today";
   static const String ok = "Ok";
   static const String cancel = "Cancel";
+  static const String yes = "Yes";
+  static const String no = "No";
   static const String haveNoNews = "No news was found at the moment, please try again later.";
   static const String newsDetail = "News Detail";
   static const String summurizeTheNews = "Summarise the news";
+  static const String dearUser = "Dear User";
+  static const String areUSureLogout = "You will be logged out. Are you sure you want to continue?";
 }

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:kartal/kartal.dart';
-import 'package:news_app_chatgpt/products/utilities/extensions/image_extensions.dart';
 
 import '../../constants/string_constants.dart';
 import '../../generation/index.dart';
+import '../../utilities/extensions/image_extensions.dart';
 
 /// Is the enum type from which the type of button is selected.
 enum ButtonType { google, apple }

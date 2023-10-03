@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:kartal/kartal.dart';
-import '../../models/news_model.dart';
-import '../../view_models/news_view_model.dart';
-import '../../view_models/user_view_model.dart';
-import 'mixin/home_mixin.dart';
+import 'package:provider/provider.dart';
+
 import '../../../products/constants/index.dart';
 import '../../../products/generation/index.dart';
+import '../../../products/utilities/extensions/image_extensions.dart';
 import '../../../products/widgets/empty_state/empty_state.dart';
 import '../../../products/widgets/items/news_item.dart';
 import '../../../products/widgets/loading_proccess/adaptive_loading_proccess.dart';
 import '../../../products/widgets/network_image/index.dart';
-import 'package:provider/provider.dart';
-import '../../../products/utilities/extensions/image_extensions.dart';
+import '../../models/news_model.dart';
+import '../../view_models/news_view_model.dart';
+import '../../view_models/user_view_model.dart';
+import 'mixin/home_mixin.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -111,14 +112,32 @@ class _UserInformationSection extends StatelessWidget {
           return Row(
             children: [
               // User profile picture
-              CircleNetworkImage(
-                  imageUrl: userVM.userModel?.profilePicture ?? ""),
-              context.sized.emptySizedWidthBoxLow3x,
+              Expanded(
+                child: Row(
+                  children: [
+                    CircleNetworkImage(
+                        imageUrl: userVM.userModel?.profilePicture ?? ""),
+                    context.sized.emptySizedWidthBoxLow3x,
 
-              // User name
-              Text(
-                userVM.userName,
-                style: context.general.textTheme.headlineMedium,
+                    // User name
+                    Flexible(
+                      child: Text(
+                        userVM.userName,
+                        style: context.general.textTheme.headlineMedium,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+
+              IconButton(
+                onPressed: () async => await userVM.showLogoutDialog(context),
+                icon: const Icon(
+                  Icons.logout,
+                  color: Colors.white,
+                ),
               ),
             ],
           );

@@ -12,7 +12,6 @@ class SplashViewModel with ChangeNotifier {
   bool get isRedirectHome => _isRedirectHome;
 
   late String? _userId;
-  String? get userId => _userId;
 
   SecurityKeysModel? _securityKeysModel = const SecurityKeysModel();
   SecurityKeysModel? get securityKeysModel => _securityKeysModel;
@@ -35,8 +34,6 @@ class SplashViewModel with ChangeNotifier {
       collection: Collections.SecurityKeys,
       docId: Collections.SecurityKeys.name,
     );
-
-    // notifyListeners();
   }
 
   /// Read user id from local storage
@@ -53,8 +50,7 @@ class SplashViewModel with ChangeNotifier {
   /// If user id is not null, redirect to home page
   Future<void> _routingDecision(BuildContext context) async {
     if (_isRedirectHome) {
-      context
-          .pushReplacement("${AppRoutes.login.path}${AppRoutes.home.path}");
+      context.pushReplacement("${AppRoutes.login.path}${AppRoutes.home.path}");
     } else {
       context.pushReplacement(AppRoutes.login.path);
     }

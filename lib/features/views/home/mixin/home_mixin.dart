@@ -8,13 +8,21 @@ import 'package:provider/provider.dart';
 mixin HomeMixin on State<HomeView> {
   String get today => "Today, ${DateFormat.yMMMMd().format(DateTime.now())}";
 
+  late final UserViewModel userViewModel;
+  late final NewsViewModel newsViewModel;
   @override
   void initState() {
-    final userViewModel = Provider.of<UserViewModel>(context, listen: false);
-    final newsViewModel = Provider.of<NewsViewModel>(context, listen: false);
+    userViewModel = Provider.of<UserViewModel>(context, listen: false);
+    newsViewModel = Provider.of<NewsViewModel>(context, listen: false);
 
     userViewModel.readUserModel(context);
     newsViewModel.fetchNews(context);
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    newsViewModel.onDispose();
+    super.dispose();
   }
 }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kartal/kartal.dart';
-import '../../constants/index.dart';
 
+import '../../constants/index.dart';
 import '../../generation/index.dart';
 
 /// [EmptyState] is a [Column] with [Icon] and [Text].
